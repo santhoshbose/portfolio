@@ -5,9 +5,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 const portfolioData = {
   profile: {
     name: "Santhosh B.",
-    role: "Computer Science Engineering Student",
-    college: "RVS College of Engineering and Technology",
-    bio: "Passionate backend developer focused on building clean, efficient backend systems, intelligent data pipelines, and responsive software tools.",
+    role: "Aspiring AI/ML Engineer | Computer Science Engineering Student",
+    college: "RVS College of Engineering and Technology, Coimbatore",
+    bio: "First-year Computer Science and Engineering student building a career in AI and data-driven roles. Hands-on experience with Python and Pandas through self-built projects, with a strong, curiosity-driven approach to learning. Currently strengthening foundations in SQL and Data Structures & Algorithms.",
     resumeUrl: "#", // Add your local public/resume.pdf link here
     email: "santhoshbose012@gmail.com"
   },
@@ -22,28 +22,33 @@ const portfolioData = {
     { platform: "LeetCode", url: "https://leetcode.com" },
     { platform: "CodeChef", url: "https://codechef.com" }
   ],
-  skills: ["Python", "Java", "Pandas", "NumPy", "Flask", "Git & GitHub", "REST APIs", "SQL"],
+  skills: ["Python", "C", "Pandas", "NumPy", "SQL (Basics)", "Data Structures & Algorithms", "Statistics", "Git & GitHub", "VS Code"],
   projects: [
     {
-      title: "Expense Pattern Tracker",
-      desc: "An intelligent data tool built using Python, Pandas, and NumPy to analyze personal expenditure timelines, track financial leakages, and generate visual pattern summaries.",
-      tags: ["Python", "Pandas", "NumPy", "Data Logic"],
-      github: "https://github.com/santhoshbose",
+      title: "Personal Expense Tracker",
+      desc: "Developed a Python-based Expense Tracker that collects, cleans, and analyzes expense data using Pandas. Implemented data cleaning techniques for handling missing values and generated spending insights through category-wise analysis and summary statistics.",
+      tags: ["Python", "Pandas", "CSV Handling"],
+      github: "https://github.com/santhoshbose/expense-tracker-python",
       live: "#"
     },
     {
-      title: "Python 101 for Data Science",
-      desc: "Verified data analysis and script architecture baseline certification completed through IBM CognitiveClass.",
-      tags: ["Python", "Data Science", "IBM Credential"],
-      github: "https://github.com/santhoshbose",
-      live: "https://cognitiveclass.ai"
+      title: "Student Data Cleaning & Analysis",
+      desc: "Cleaned and analyzed a student dataset using Python and Pandas, handling missing values and inconsistencies. Prepared raw data into a structured, analysis-ready format, applying core data-cleaning techniques.",
+      tags: ["Python", "Pandas", "Data Cleaning"],
+      github: "https://github.com/santhoshbose/student_data_cleaning_project",
+      live: "#"
     }
   ],
   articles: [
     {
-      title: "Getting Started with Python Backend Architectures",
-      summary: "Exploring how Python and lightweight microframeworks handle dynamic API routing and scale data seamlessly.",
+      title: "Introduction to Python — SoloLearn",
+      summary: "Foundational validation course covering syntax baselines, core programmatic control flows, and object handling logic structures.",
       link: "#"
+    },
+    {
+      title: "Python 101 for Data Science — IBM",
+      summary: "Verified data analysis and script architecture baseline certification completed through Cognitive Class / Coursera.",
+      link: "https://cognitiveclass.ai"
     }
   ]
 };
@@ -180,7 +185,7 @@ export default function App() {
           )}
 
           {/* ARTICLES & STATS HUB */}
-          {activeTab === 'Articles' || activeTab === 'Articles & Stats' && (
+          {(activeTab === 'Articles' || activeTab === 'Articles & Stats') && (
             <motion.section
               key="stats" initial="initial" animate="in" exit="out"
               variants={pageVariants} transition={pageTransition}
@@ -195,12 +200,12 @@ export default function App() {
                   </a>
                 ))}
               </div>
-              <h2 style={{ ...styles.h2, marginTop: '40px' }}>Featuring Articles</h2>
+              <h2 style={{ ...styles.h2, marginTop: '40px' }}>Featuring Articles & Certifications</h2>
               {portfolioData.articles.map(art => (
                 <div key={art.title} style={styles.articleItem}>
                   <h3>{art.title}</h3>
                   <p style={styles.projDesc}>{art.summary}</p>
-                  <a href={art.link} style={styles.actionText}>Read Publication &rarr;</a>
+                  <a href={art.link} target="_blank" rel="noreferrer" style={styles.actionText}>Read Publication &rarr;</a>
                 </div>
               ))}
             </motion.section>
