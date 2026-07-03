@@ -1,0 +1,132 @@
+/* ===== Google Fonts — Inter ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* ===== Design Tokens ===== */
+:root {
+  /* Backgrounds */
+  --bg-deep: #0B0C10;
+  --bg-card: #1F2833;
+  --bg-elevated: #141921;
+
+  /* Accent palette */
+  --accent-cyan: #66FCF1;
+  --accent-emerald: #45A29E;
+  --accent-violet: #C678DD;
+  --accent-pink: #E06C9F;
+
+  /* Text */
+  --text-primary: #E0E0E0;
+  --text-secondary: #9CA3AF;
+  --text-muted: #6B7280;
+
+  /* Glassmorphism */
+  --glass-bg: rgba(31, 40, 51, 0.45);
+  --glass-border: rgba(102, 252, 241, 0.12);
+  --glass-blur: 12px;
+
+  /* Spacing */
+  --section-pad: 6rem 2rem;
+  --container-max: 1200px;
+
+  /* Transitions */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  /* Font */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* ===== CSS Reset ===== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-deep);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* ===== Selection ===== */
+::selection {
+  background: rgba(102, 252, 241, 0.25);
+  color: var(--accent-cyan);
+}
+
+::-moz-selection {
+  background: rgba(102, 252, 241, 0.25);
+  color: var(--accent-cyan);
+}
+
+/* ===== Custom Scrollbar ===== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-deep);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(102, 252, 241, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(102, 252, 241, 0.4);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(102, 252, 241, 0.2) var(--bg-deep);
+}
+
+/* ===== Links ===== */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ===== Images ===== */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ===== Lists ===== */
+ul, ol {
+  list-style: none;
+}
+
+/* ===== Buttons ===== */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+/* ===== Inputs ===== */
+input, textarea {
+  font-family: inherit;
+  outline: none;
+}

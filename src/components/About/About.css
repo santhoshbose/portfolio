@@ -1,0 +1,120 @@
+/* ===== About Section ===== */
+.about-section {
+  padding: 2rem 0;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* ===== Text Block ===== */
+.about-text-wrapper {
+  padding-right: 2rem;
+}
+
+.about-text {
+  font-size: 1.1rem;
+  line-height: 1.85;
+  color: var(--text-secondary);
+}
+
+.about-highlight {
+  color: var(--accent-cyan);
+  font-weight: 600;
+}
+
+/* ===== Timeline ===== */
+.timeline {
+  position: relative;
+  padding-left: 2.5rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--accent-cyan), var(--accent-violet), transparent);
+  border-radius: 2px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 1.75rem;
+}
+
+/* Dot on the timeline */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -2.5rem;
+  top: 1.5rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent-cyan);
+  border: 3px solid var(--bg-deep);
+  box-shadow: 0 0 12px rgba(102, 252, 241, 0.5);
+  transform: translateX(-5px);
+  z-index: 1;
+}
+
+/* ===== Timeline Cards ===== */
+.timeline-card {
+  padding: 1.5rem;
+}
+
+.timeline-year {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: var(--accent-emerald);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.35rem;
+}
+
+.timeline-title {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  font-weight: 700;
+  margin-bottom: 0.15rem;
+}
+
+.timeline-org {
+  font-size: 0.9rem;
+  color: var(--accent-cyan);
+  margin-bottom: 0.6rem;
+  font-weight: 500;
+}
+
+.timeline-detail {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .about-text-wrapper {
+    padding-right: 0;
+  }
+
+  .timeline {
+    padding-left: 2rem;
+  }
+
+  .timeline-item::before {
+    left: -2rem;
+  }
+}

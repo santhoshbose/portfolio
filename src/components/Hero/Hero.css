@@ -1,0 +1,132 @@
+/* ===== Hero Section ===== */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 0 5%;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 2rem;
+  position: relative;
+}
+
+/* ===== Text Block ===== */
+.hero-text {
+  flex: 1;
+  z-index: 2;
+  max-width: 620px;
+}
+
+.hero-greeting {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.04em;
+  font-weight: 400;
+}
+
+.hero-name {
+  font-size: clamp(2.5rem, 5vw, 4.2rem);
+  font-weight: 900;
+  line-height: 1.08;
+  margin-bottom: 1rem;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-emerald) 60%, var(--accent-violet) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-role {
+  font-size: clamp(1.05rem, 2vw, 1.4rem);
+  color: var(--accent-cyan);
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.hero-bio {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  margin-bottom: 2.25rem;
+  max-width: 520px;
+}
+
+/* ===== Actions Row ===== */
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.hero-socials {
+  display: flex;
+  gap: 0.625rem;
+  margin-left: 0.5rem;
+}
+
+.social-icon-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--accent-cyan);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-icon-btn:hover {
+  background: rgba(102, 252, 241, 0.12);
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 18px rgba(102, 252, 241, 0.25);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 968px) {
+  .hero-content {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .hero-text {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-bio {
+    max-width: 100%;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-socials {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 0 1.25rem;
+  }
+}

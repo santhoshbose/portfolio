@@ -1,0 +1,85 @@
+.blobs-container {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* ===== Individual Blobs ===== */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.12;
+  will-change: transform;
+}
+
+/* Cyan blob — top left */
+.blob-1 {
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, #66FCF1 0%, transparent 70%);
+  top: 8%;
+  left: 15%;
+  animation: blobDrift1 25s ease-in-out infinite alternate;
+}
+
+/* Violet blob — bottom right */
+.blob-2 {
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, #C678DD 0%, transparent 70%);
+  top: 55%;
+  right: 10%;
+  animation: blobDrift2 30s ease-in-out infinite alternate;
+}
+
+/* Emerald blob — center bottom */
+.blob-3 {
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, #45A29E 0%, transparent 70%);
+  bottom: 15%;
+  left: 45%;
+  animation: blobDrift3 22s ease-in-out infinite alternate;
+}
+
+/* Cyan-violet mix — center */
+.blob-4 {
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(102, 252, 241, 0.5) 0%, rgba(198, 120, 221, 0.3) 50%, transparent 70%);
+  top: 35%;
+  left: 55%;
+  animation: blobDrift4 28s ease-in-out infinite alternate;
+}
+
+/* ===== Drift Animations ===== */
+@keyframes blobDrift1 {
+  0%   { transform: translate(0, 0) scale(1); }
+  33%  { transform: translate(60px, 40px) scale(1.05); }
+  66%  { transform: translate(-30px, 80px) scale(0.95); }
+  100% { transform: translate(40px, -20px) scale(1.02); }
+}
+
+@keyframes blobDrift2 {
+  0%   { transform: translate(0, 0) scale(1); }
+  33%  { transform: translate(-50px, -30px) scale(1.08); }
+  66%  { transform: translate(40px, -60px) scale(0.96); }
+  100% { transform: translate(-20px, 30px) scale(1.03); }
+}
+
+@keyframes blobDrift3 {
+  0%   { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(70px, -50px) scale(1.06); }
+  100% { transform: translate(-40px, 30px) scale(0.97); }
+}
+
+@keyframes blobDrift4 {
+  0%   { transform: translate(0, 0) scale(1); }
+  25%  { transform: translate(-60px, 40px) scale(1.04); }
+  50%  { transform: translate(30px, -40px) scale(0.98); }
+  75%  { transform: translate(-20px, -20px) scale(1.06); }
+  100% { transform: translate(50px, 20px) scale(1); }
+}

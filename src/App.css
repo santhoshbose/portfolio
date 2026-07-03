@@ -1,0 +1,125 @@
+/* ===== App Layout ===== */
+.app {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.main-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== Section Containers ===== */
+.section-container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--section-pad);
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-emerald));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  margin-bottom: 3rem;
+  line-height: 1.6;
+}
+
+/* ===== Gradient Text ===== */
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-emerald) 50%, var(--accent-violet) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-alt {
+  background: linear-gradient(135deg, var(--accent-violet) 0%, var(--accent-cyan) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ===== Glassmorphic Cards ===== */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 2rem;
+  transition: all 0.4s var(--ease-out-expo);
+}
+
+.glass-card:hover {
+  border-color: rgba(102, 252, 241, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(102, 252, 241, 0.06);
+}
+
+/* ===== Glow Effects ===== */
+.glow-border {
+  box-shadow:
+    0 0 15px rgba(102, 252, 241, 0.08),
+    inset 0 0 15px rgba(102, 252, 241, 0.03);
+}
+
+.glow-border:hover {
+  box-shadow:
+    0 0 25px rgba(102, 252, 241, 0.15),
+    inset 0 0 25px rgba(102, 252, 241, 0.05);
+}
+
+/* ===== Divider Line ===== */
+.section-divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-violet));
+  border-radius: 3px;
+  margin-bottom: 2rem;
+}
+
+/* ===== Page Transition ===== */
+.page-transition {
+  min-height: 100vh;
+  padding-top: 70px;
+  position: relative;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .section-container {
+    padding: 4rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-container {
+    padding: 3rem 1.25rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-container {
+    padding: 2.5rem 1rem;
+  }
+}
