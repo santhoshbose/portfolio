@@ -8,19 +8,18 @@ const portfolioData = {
     role: "Aspiring AI/ML Engineer | Computer Science Engineering Student",
     college: "RVS College of Engineering and Technology, Coimbatore",
     bio: "First-year Computer Science and Engineering student building a career in AI and data-driven roles. Hands-on experience with Python and Pandas through self-built projects, with a strong, curiosity-driven approach to learning. Currently strengthening foundations in SQL and Data Structures & Algorithms.",
-    resumeUrl: "#", // Add your local public/resume.pdf link here
+    resumeUrl: "/resume.pdf", // Targets your public/resume.pdf file
     email: "santhoshbose012@gmail.com"
   },
   socials: [
     { name: "LinkedIn", url: "https://www.linkedin.com/in/santhosh-bose-1918b0382" },
     { name: "GitHub", url: "https://github.com/santhoshbose" },
-    { name: "Instagram", url: "https://instagram.com" },
+    { name: "Instagram", url: "https://instagram.com/santhosh._.____" },
     { name: "YouTube", url: "https://youtube.com" },
     { name: "Twitter", url: "https://twitter.com" }
   ],
   codingProfiles: [
-    { platform: "LeetCode", url: "https://leetcode.com" },
-    { platform: "CodeChef", url: "https://codechef.com" }
+    { platform: "HackerRank", url: "https://www.hackerrank.com/profile/santhoshbose012" }
   ],
   skills: ["Python", "C", "Pandas", "NumPy", "SQL (Basics)", "Data Structures & Algorithms", "Statistics", "Git & GitHub", "VS Code"],
   projects: [
@@ -28,27 +27,25 @@ const portfolioData = {
       title: "Personal Expense Tracker",
       desc: "Developed a Python-based Expense Tracker that collects, cleans, and analyzes expense data using Pandas. Implemented data cleaning techniques for handling missing values and generated spending insights through category-wise analysis and summary statistics.",
       tags: ["Python", "Pandas", "CSV Handling"],
-      github: "https://github.com/santhoshbose/expense-tracker-python",
-      live: "#"
+      github: "https://github.com/santhoshbose/expense-tracker-python"
     },
     {
       title: "Student Data Cleaning & Analysis",
       desc: "Cleaned and analyzed a student dataset using Python and Pandas, handling missing values and inconsistencies. Prepared raw data into a structured, analysis-ready format, applying core data-cleaning techniques.",
       tags: ["Python", "Pandas", "Data Cleaning"],
-      github: "https://github.com/santhoshbose/student_data_cleaning_project",
-      live: "#"
+      github: "https://github.com/santhoshbose/student_data_cleaning_project"
     }
   ],
   articles: [
     {
       title: "Introduction to Python — SoloLearn",
       summary: "Foundational validation course covering syntax baselines, core programmatic control flows, and object handling logic structures.",
-      link: "#"
+      certUrl: "https://www.sololearn.com" // You can change this if you have a direct link!
     },
     {
       title: "Python 101 for Data Science — IBM",
       summary: "Verified data analysis and script architecture baseline certification completed through Cognitive Class / Coursera.",
-      link: "https://cognitiveclass.ai"
+      certUrl: "https://courses.cognitiveclass.ai/certificates/6718f253d6a54985a0503155287a934a"
     }
   ]
 };
@@ -118,7 +115,7 @@ export default function App() {
               <p style={styles.bodyText}>{portfolioData.profile.bio}</p>
               
               <div style={styles.ctaGroup}>
-                <a href={portfolioData.profile.resumeUrl} download style={styles.primaryBtn}>Downloadable Resume</a>
+                <a href={portfolioData.profile.resumeUrl} download="Santhosh_B_Resume.pdf" style={styles.primaryBtn}>Downloadable Resume</a>
                 <button onClick={() => setActiveTab('Contact')} style={styles.secondaryBtn}>Get In Touch</button>
               </div>
             </motion.section>
@@ -158,14 +155,13 @@ export default function App() {
               style={styles.panel}
             >
               <h2 style={styles.h2}>Featured Works</h2>
-              <p style={styles.bodyText}>Click the card to open live instance execution panels or explore the architecture repo:</p>
+              <p style={styles.bodyText}>Explore the architecture repositories below:</p>
               <div style={styles.projectGrid}>
                 {portfolioData.projects.map(proj => (
                   <motion.div
                     key={proj.title}
                     style={styles.projectCard}
                     whileHover={{ y: -6, borderColor: '#00e5ff' }}
-                    onClick={() => window.open(proj.live, '_blank')}
                   >
                     <div>
                       <h3 style={styles.projTitle}>{proj.title}</h3>
@@ -175,8 +171,7 @@ export default function App() {
                       </div>
                     </div>
                     <div style={styles.cardLinks}>
-                      <span style={styles.actionText}>Launch &rarr;</span>
-                      <a href={proj.github} target="_blank" rel="noreferrer" style={styles.gitBtn} onClick={(e) => e.stopPropagation()}>Code Repository</a>
+                      <a href={proj.github} target="_blank" rel="noreferrer" style={styles.gitBtn}>Code Repository &rarr;</a>
                     </div>
                   </motion.div>
                 ))}
@@ -200,12 +195,12 @@ export default function App() {
                   </a>
                 ))}
               </div>
-              <h2 style={{ ...styles.h2, marginTop: '40px' }}>Featuring Articles & Certifications</h2>
+              <h2 style={{ ...styles.h2, marginTop: '40px' }}>Certifications</h2>
               {portfolioData.articles.map(art => (
                 <div key={art.title} style={styles.articleItem}>
                   <h3>{art.title}</h3>
                   <p style={styles.projDesc}>{art.summary}</p>
-                  <a href={art.link} target="_blank" rel="noreferrer" style={styles.actionText}>Read Publication &rarr;</a>
+                  <a href={art.certUrl} target="_blank" rel="noreferrer" style={styles.actionText}>Verify Credential &rarr;</a>
                 </div>
               ))}
             </motion.section>
@@ -388,7 +383,6 @@ const styles = {
     padding: '28px',
     borderRadius: '12px',
     border: '1px solid #1f2833',
-    cursor: 'pointer',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
@@ -420,24 +414,29 @@ const styles = {
   },
   cardLinks: {
     display: 'flex',
-    justifyContent: 'space-between',
+    justifyContent: 'flex-start',
     alignItems: 'center'
   },
   actionText: {
     color: '#00e5ff',
-    fontWeight: '700'
+    fontWeight: '700',
+    textDecoration: 'none',
+    fontSize: '0.95rem'
   },
   gitBtn: {
     background: '#1f2330',
-    color: '#f3f4f6',
+    color: '#00e5ff',
     textDecoration: 'none',
-    padding: '6px 14px',
+    padding: '8px 16px',
     borderRadius: '6px',
-    fontSize: '0.88rem'
+    fontSize: '0.9rem',
+    border: '1px solid #1f2833',
+    fontWeight: '600',
+    transition: 'all 0.2s ease'
   },
   statsGrid: {
     display: 'grid',
-    gridTemplateColumns: '1fr 1fr',
+    gridTemplateColumns: '1fr',
     gap: '20px',
     marginBottom: '40px'
   },
